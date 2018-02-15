@@ -17,7 +17,7 @@ const ingredientOutput = ingredients.map(ig =>{
         display:'inline-block',
         margin: '0 8px',
         border:'1px solid #ccc',
-        padding: 'spx'
+        padding: '5px'
     }}>{ig.name} ({ig.amount}) </span>;
 })
 
