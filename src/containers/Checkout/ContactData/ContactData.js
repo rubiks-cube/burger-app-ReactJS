@@ -79,7 +79,7 @@ state = {
                 value:'',
                 validation:{
                     required:true,
-                    email: true
+                    isEmail: true
                 },
                 valid:false,
                 touched:false
@@ -139,7 +139,7 @@ state = {
         isValid= reg.test(value) && isValid;
         
     }
-    if(rules.email){
+    if(rules.isEmail){
         var re = new RegExp('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$');
         
         isValid=  re.test(String(value).toLowerCase()) && isValid;
@@ -179,10 +179,11 @@ state = {
     const order = {
         ingredients: this.props.ings,
         price: this.props.price,
-       orderData:formData
+       orderData:formData,
+       userId:this.props.userId
     };
 
-    this.props.onBurgerOrder(order);
+    this.props.onBurgerOrder(order,this.props.token);
    
   }
 
@@ -231,13 +232,15 @@ const mapStateToProps =  (state) => {
     return {
         ings: state.burgerBuilder.ingredients,
         price:state.burgerBuilder.totalPrice,
-        loading: state.order.loading
+        loading: state.order.loading,
+        token: state.auth.token,
+        userId:state.auth.userId
     };
 }
 
 const mapStateToDispatch = (dispatch)  => {
     return {
-    onBurgerOrder: (orderData) => dispatch(orderActions.purchaseBurger(orderData))
+    onBurgerOrder: (orderData,token) => dispatch(orderActions.purchaseBurger(orderData,token))
     };
 }
 
