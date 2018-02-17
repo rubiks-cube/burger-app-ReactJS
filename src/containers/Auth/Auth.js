@@ -138,7 +138,7 @@ class Auth extends Component {
                {authRedirect}
                 {errMsg}
                <form onSubmit={this.submitHandler}>
-               {this.state.isSignUp? <span style={{color:'salmon'}}>SIGN UP</span>:<span style={{color:'salmon'}}>SIGN IN</span>}
+               {this.state.isSignUp? <span style={{fontWeight:'bold',color:'salmon'}}>SIGN UP</span>:<span style={{fontWeight:'bold',color:'salmon'}}>SIGN IN</span>}
                    {form}
                <Button btnType="Success" > SUBMIT </Button>
                </form>
