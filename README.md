@@ -1,6 +1,7 @@
 # Burger App  
-A burger ordering web app using:   
--React Library  
+A burger building & ordering web appplication using:   
+-React Library   
+-React Router    
 -Redux   
 -Firebase
 
