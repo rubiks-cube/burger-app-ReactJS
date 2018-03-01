@@ -49,6 +49,7 @@ class Auth extends Component {
         if(!this.props.burgerBuilded && !this.props.authRedirectPath !=='/'){
             this.props.onSetAuthRedirect();
         }
+        
     }
 
     checkValidity(value,rules){
@@ -105,7 +106,7 @@ class Auth extends Component {
                 config:this.state.controls[key]
             });
         }
-
+          
         let form = formElementsArray.map(formElement => (
             <Input key={formElement.id} elementType={formElement.config.elementType}
             elementConfig={formElement.config.elementConfig}
